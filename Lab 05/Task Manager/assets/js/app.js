@@ -148,7 +148,7 @@ function removeTask(e){
         }
         
          ta.forEach(element => {
-             if(searchValue === element){
+             if(element.includes(searchValue)){
                  arrTemp.push(element)
              }
          });
