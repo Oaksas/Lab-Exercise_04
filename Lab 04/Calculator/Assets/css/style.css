@@ -1,0 +1,13 @@
+.container{
+
+}
+input[type="text"]{
+height: 100px;
+text-align: right;
+
+}
+#log{
+    padding-left: 40px;
+    padding-right: 40px;
+
+}
