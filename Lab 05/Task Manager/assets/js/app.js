@@ -10,6 +10,7 @@ const dsc = document.querySelector('#dsc');
 
 
 var ta =[];
+var date =[];
 
 form.addEventListener('submit',addNewTask);
 clearBtn.addEventListener('click',clearAllTasks)
@@ -38,6 +39,7 @@ e.preventDefault();
         li.className = 'collection-item';
         li.appendChild(document.createTextNode(taskInput.value));
         ta.push(taskInput.value)
+        date.push(new Date())
         const link = document.createElement('a');
         link.className = 'delete-item secondary-content';
         link.innerHTML = '<i class="fa fa-remove"></i>';
@@ -64,7 +66,11 @@ function removeTask(e){
     {
         if (confirm('Are You Sure about that ?'))
         {
-            e.target.parentElement.parentElement.remove();
+
+
+           e.target.parentElement.parentElement.remove();
+           
+    
 
         }
 
@@ -77,13 +83,10 @@ function removeTask(e){
        taskList.removeChild(taskList.firstChild)
        taskList.innerHTML=""
 
-       var arrTemp = ta.reverse()
+       var arrTemp = [...ta]
+       arrTemp = arrTemp.reverse()
 
-       arrTemp = [... arrTemp]
-     
-
-
-      
+         
 
        arrTemp.forEach(function(element){
         const link = document.createElement('a');
@@ -107,11 +110,7 @@ function removeTask(e){
  
         var arrTemp = ta
  
-        arrTemp = [... arrTemp]
-      
- 
- 
-       
+        arrTemp = [... arrTemp]  
  
         arrTemp.forEach(function(element){
          const link = document.createElement('a');
@@ -141,6 +140,7 @@ function removeTask(e){
             taskList.innerHTML=""
      
         }
+        
          ta.forEach(element => {
              if(searchValue === element){
                  arrTemp.push(element)
@@ -160,7 +160,19 @@ function removeTask(e){
        );
 
 
-     
+     if(!taskList.innerHTML){
+        ta.forEach(function(element){
+            const link = document.createElement('a');
+            const li = document.createElement('li');
+            li.className = 'collection-item';
+            li.appendChild(document.createTextNode(element))
+           link.className = 'delete-item secondary-content'
+           link.innerHTML = '<i class="fa fa-remove"></i>'
+           li.appendChild(link)
+           taskList.appendChild(li)}
+           );
+    
+     }
         
   
 
