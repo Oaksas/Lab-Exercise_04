@@ -39,11 +39,17 @@ e.preventDefault();
         li.className = 'collection-item';
         li.appendChild(document.createTextNode(taskInput.value));
         ta.push(taskInput.value)
-        date.push(new Date())
         const link = document.createElement('a');
+        const dateSpan = document.createElement('span')
+        dateSpan.innerHTML = new Date()
+        dateSpan.style.display = "none"
+        date.push(dateSpan.value)
         link.className = 'delete-item secondary-content';
         link.innerHTML = '<i class="fa fa-remove"></i>';
+        li.appendChild(dateSpan);
+
         li.appendChild(link);
+
         taskList.appendChild(li);
 
 
@@ -75,7 +81,7 @@ function removeTask(e){
         }
 
     }
-
+6
 }
 
 
@@ -94,7 +100,7 @@ function removeTask(e){
         li.className = 'collection-item';
         li.appendChild(document.createTextNode(element))
        link.className = 'delete-item secondary-content'
-       link.innerHTML = '<i class="fa fa-remove"></i>'
+       link.innerHTML = '<i class="fa fa-remove"></i>';
        li.appendChild(link)
        taskList.appendChild(li)}
        );
