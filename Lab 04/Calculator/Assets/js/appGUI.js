@@ -26,6 +26,10 @@ var inp  = document.getElementById("inp")
 var log = document.getElementById("log")
 var ln = document.getElementById("ln")
 var sqrt = document.getElementById("sqrt")
+var pow = document.getElementById("pow")
+var dot = document.getElementById("point")
+
+
 
 
 fact.addEventListener('click',function(e) {inp.value = facto(inp.value)});
@@ -48,6 +52,9 @@ add.addEventListener('click',function(e) {addInput(add)});
 sub.addEventListener('click',function(e) {addInput(sub)});
 mul.addEventListener('click',function(e) {addInput(mul)});
 div.addEventListener('click',function(e) {addInput(div)});
+pow.addEventListener('click',function(e) {powInp(pow)});
+dot.addEventListener('click',function(e) {addInput(dot)});
+
 
 log.addEventListener('click',logFun);
 ln.addEventListener('click',lnFun);
@@ -70,10 +77,28 @@ function delt(){
     inp.value = ""
 }
 function addInput(temp){
-inp.value = inp.value + temp.innerHTML
+    var tempVal = inp.value
+if(tempVal.slice(-1) === "+" || tempVal.slice(-1) === "-" || tempVal.slice(-1) === "." || tempVal.slice(-1) === "*"||tempVal.slice(-1) === "/"||tempVal.slice(-1) === ".")
+{
+    if(temp.innerHTML === "+" || temp.innerHTML === "-" || temp.innerHTML === "." || temp.innerHTML === "*"||temp.innerHTML === "/"||temp.innerHTML === "."){
+        return
+        }
+        else{
+            inp.value = inp.value + temp.innerHTML
+        }
+    }
+else{
+    inp.value = inp.value + temp.innerHTML
+
+}
     
 
 }
+function powInp(temp){
+    inp.value = inp.value + temp.value
+        
+    
+    }
 function sqroot(){
 
     inp.value = Math.sqrt(inp.value)
@@ -86,12 +111,19 @@ function lnFun(){
     inp.value = Math.log(inp.value)
 }
 function ev(result){
+
 if(eval(result).toString() === "Infinity"){
     inp.value = "INVALID INPUT"
 
-}else{
+}
+else{
+try{
     inp.value = eval(result)
 
+}
+catch(e){
+alert(e)
+}
 }
     
 }
