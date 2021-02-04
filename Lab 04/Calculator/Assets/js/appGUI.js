@@ -33,7 +33,7 @@ var dot = document.getElementById("point")
 
 
 fact.addEventListener('click',function(e) {inp.value = facto(inp.value)});
-perc.addEventListener('click',function(e) {addInput(perc)});
+perc.addEventListener('click',function(e) {inp.value = parseInt(inp.value)/100});
 par1.addEventListener('click',function(e) {addInput(par1)});
 par2.addEventListener('click',function(e) {addInput(par2)});
 
@@ -96,6 +96,7 @@ else{
 }
 function powInp(temp){
     inp.value = inp.value + temp.value
+   
         
     
     }
@@ -111,6 +112,19 @@ function lnFun(){
     inp.value = Math.log(inp.value)
 }
 function ev(result){
+    var eqn= result
+    var base;
+    var exp;
+
+    for (var i = 0; i < eqn.length; i++) {
+       if(eqn.charAt(i) ==="^"){
+           base = eqn.slice(0,i);
+           exp = eqn.slice(i+1,eqn.length);
+           inp.value = Math.pow(base,exp);
+           return
+       }
+  
+    }
 
 if(eval(result).toString() === "Infinity"){
     inp.value = "INVALID INPUT"
