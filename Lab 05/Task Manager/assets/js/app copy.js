@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // console.log('Database Ready');
 
         // save the result
+
+
         DB = TasksDB.result;
 
         // display the Task List 
@@ -44,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // create an object store, 
         // keypath is going to be the Indexes
         let objectStore = db.createObjectStore('tasks', { keyPath: 'id', autoIncrement: true });
+
 
         // createindex: 1) field name 2) keypath 3) options
         objectStore.createIndex('taskname', 'taskname', { unique: false });
@@ -66,24 +69,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
             return;
         }
+        var date = new Date();      
 
+
+        
         // create a new object with the form info
+
         let newTask = {
             taskname: taskInput.value,
+            date : date,
+           
+            
         }
 
         // Insert the object into the database 
         let transaction = DB.transaction(['tasks'], 'readwrite');
         let objectStore = transaction.objectStore('tasks');
 
+        
+
         let request = objectStore.add(newTask);
+       
+
 
         // on success
         request.onsuccess = () => {
             form.reset();
+
         }
         transaction.oncomplete = () => {
             console.log('New appointment added');
+         
+
 
             displayTaskList();
         }
@@ -231,7 +248,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-   
+     function filterFun(id,taskname){
+    
+
+            // Create an li element when the user adds a task 
+            const li = document.createElement('li');
+            //add Attribute for delete 
+            li.setAttribute('data-task-id',id);
+            // Adding a class
+            li.className = 'collection-item';
+            // Create text node and append it 
+            li.appendChild(document.createTextNode(taskname));
+    
+            // Create new element for the link 
+            const link = document.createElement('a');
+            // Add class and the x marker for a 
+            link.className = 'delete-item secondary-content';
+            link.innerHTML = `
+             <i class="fa fa-remove"></i>
+            &nbsp;
+            <a href="./edit.html?id=${id}"><i class="fa fa-edit"></i> </a>
+            `;
+            // Append link to li
+            li.appendChild(link);
+            // Append to UL 
+            taskList.appendChild(li);
+            
+        
+    
+      }
 
       function filterTask(){
         searchValue = filter.value;
