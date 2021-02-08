@@ -231,35 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-     function filterFun(id,taskname){
-    
-
-            // Create an li element when the user adds a task 
-            const li = document.createElement('li');
-            //add Attribute for delete 
-            li.setAttribute('data-task-id',id);
-            // Adding a class
-            li.className = 'collection-item';
-            // Create text node and append it 
-            li.appendChild(document.createTextNode(taskname));
-    
-            // Create new element for the link 
-            const link = document.createElement('a');
-            // Add class and the x marker for a 
-            link.className = 'delete-item secondary-content';
-            link.innerHTML = `
-             <i class="fa fa-remove"></i>
-            &nbsp;
-            <a href="./edit.html?id=${id}"><i class="fa fa-edit"></i> </a>
-            `;
-            // Append link to li
-            li.appendChild(link);
-            // Append to UL 
-            taskList.appendChild(li);
-            
-        
-    
-      }
+   
 
       function filterTask(){
         searchValue = filter.value;
