@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 console.log("Successfully updated")
         }
         transaction.oncomplete = () => {
-            console.log('upgrade added');
+            console.log('update added');
          
 
 
