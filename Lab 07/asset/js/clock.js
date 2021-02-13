@@ -5,7 +5,7 @@ const deg = 6;
 
 setInterval(()=>{
     let time = new Date();
-    let hours = time.getHours()%12;
+    let hours = time.getHours()*30;
     let mins = time.getMinutes()* deg;
     let secs = time.getSeconds() * deg;
 

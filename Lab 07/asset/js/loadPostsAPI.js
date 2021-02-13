@@ -1,5 +1,5 @@
 // UI Vars 
-const postDiv3 = document.getElementById('thePosts');
+const data = document.getElementById('thePosts');
 const filter = document.getElementById('filter');
 
 const assend = document.querySelector('#assend');
@@ -31,7 +31,7 @@ function load_fromPlaceHolder() {
         
                 <div class="item">
                 <div class="image">
-                    <img src=" https://images.unsplash.com/photo-1499482125586-91609c0b5fd4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+                    <img src="https://images.unsplash.com/photo-1459478309853-2c33a60058e7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
                 </div>
                 <div class="content">
                     <a class="header" href="#" id="bTitle">
@@ -52,7 +52,7 @@ function load_fromPlaceHolder() {
 
             loader.classList.remove('active')
             // loader.classList.remove('dimmer')
-            postDiv3.innerHTML = output;
+            data.innerHTML = output;
         })
         .catch(function(err) {
             console.log(err);
@@ -78,7 +78,7 @@ function loadDataNew() {
 
     <div class="item collection">
         <div class="image">
-            <img src=" https://images.unsplash.com/photo-1499482125586-91609c0b5fd4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+            <img src=" https://images.unsplash.com/photo-1459478309853-2c33a60058e7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
         </div>
         <div class="content">
             <a class="header" href="#" id="bTitle">
@@ -99,8 +99,8 @@ function loadDataNew() {
             });
 
             loader.classList.remove('.active');
-            postDiv3.innerHTML = output;
-        })
+            data.innerHTML = output;
+      })
         .catch(function(err) {
             console.log(err);
         });
