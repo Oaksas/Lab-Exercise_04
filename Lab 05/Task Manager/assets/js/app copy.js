@@ -19,7 +19,7 @@ let tb=[];
 // Add Event Listener [on Load]
 document.addEventListener('DOMContentLoaded', () => {
     // create the database
-    let TasksDB = indexedDB.open('tasks', 1);
+    let TasksDB = indexedDB.open('tasks', 2);
 
     // if there's an error
     TasksDB.onerror = function() {
@@ -50,6 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // createindex: 1) field name 2) keypath 3) options
         objectStore.createIndex('taskname', 'taskname', { unique: false });
+        objectStore.createIndex('date', 'date', { unique: false });
+
 
         console.log('Database ready and fields created!');
     }

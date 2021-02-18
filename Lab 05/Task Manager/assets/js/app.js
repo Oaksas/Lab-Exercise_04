@@ -185,12 +185,6 @@ function removefromDB(taskItem) {
     }
        );
 
-
-
-        
-  
-
-
   }
   function filterFun(element){
     const link = document.createElement('a');
