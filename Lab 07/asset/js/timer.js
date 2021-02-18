@@ -8,15 +8,14 @@ function startTime() {
     var m = today.getMinutes();
     var s = today.getSeconds();
     //get the AM / PM value 
-    let meridian = h > 12 ? 'PM' : 'AM';
+    let am_pm = h > 12 ? 'PM' : 'AM';
     // Convert the hour to 12 format 
     h = h % 12 || 12;
     // add zero 
-    h = addZero(h)
     m = addZero(m);
     s = addZero(s);
     // Assign to the UI [p]
-    timerDemo.innerHTML = `${h} : ${addZero(m)} : ${addZero(s)} ${meridian }`;
+    timerDemo.innerHTML = `${h} : ${addZero(m)} : ${addZero(s)} ${am_pm }`;
     setTimeout(startTime, 500);
 }
 
