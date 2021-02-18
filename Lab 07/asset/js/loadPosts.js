@@ -13,7 +13,7 @@ function loadPosts() {
     const xhr = new XMLHttpRequest();
 
     // Open the connection [URL can be local or remote]
-    xhr.open('GET', '/asset/jsonData/post.json', true);
+    xhr.open('GET', '/asset/jsonData/posts.json', true);
     //on ready state is 4 when it reaches this method 
     xhr.onload = function() {
         // Check status is OK 
