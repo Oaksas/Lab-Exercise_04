@@ -5,12 +5,12 @@ const deg = 6;
 
 setInterval(()=>{
     let time = new Date();
-    let hours = time.getHours()*30;
+    let hours = time.getHours()%12;
     let mins = time.getMinutes()* deg;
     let secs = time.getSeconds() * deg;
 
-    hour.style.transform = `rotateZ(${hours + (mins/12)}deg)`;
-    min.style.transform = `rotateZ(${mins}deg)`;
-    sec.style.transform = `rotateZ(${secs}deg)`;
+    hour.style.transform = `rotate(${hours + (mins/12)}deg)`;
+    min.style.transform = `rotate(${mins}deg)`;
+    sec.style.transform = `rotate(${secs}deg)`;
 });
 

@@ -31,7 +31,7 @@ body {
 .clock-red {
   height: 8px;
   width: 8px;
-  background: crimson;
+  background: blue;
   z-index: 6;
   border-radius: 50%;
 }
@@ -61,7 +61,7 @@ body {
   z-index: 5;
   left: -1px;
   top: -25px;
-  background: crimson;
+  background: rgb(50, 20, 220);
   /* transform: rotate(180deg); */
 }
 .sec:after {
@@ -72,7 +72,7 @@ body {
   z-index: 5;
   left: -3px;
   top: -45px;
-  background: crimson;
+  background: rgb(50, 20, 220);
   /*  */
 }
 .min:before {
