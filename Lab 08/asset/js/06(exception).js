@@ -18,16 +18,20 @@ function divideNo() {
     }
 
     // 1. Define a try block 
+    try {
+        const result = performDivision(no1, no2);
 
+        res.innerHTML = result;
+    } catch (error) {
+        res.innerHTML = error
+    }
     // 2. put this two lines of code inside the try block 
 
-    const result = performDivision(no1, no2);
-
-    res.innerHTML = result;
+ 
 
 
     //4.Catch the exception and display error message [remove the string when you have the error variable]
-    res.innerHTML = "error";
+   ;
 
 }
 
