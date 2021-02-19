@@ -1,4 +1,4 @@
-const postDiv1 = document.querySelector(".swiper-wrapper")
+const swiperWrapper = document.querySelector(".swiper-wrapper")
 const loader = document.querySelector('.load');
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -21,7 +21,7 @@ function loadDataNew() {
 `;
             });
             loader.classList.remove('active')
-            postDiv1.innerHTML = output;
+            swiperWrapper.innerHTML = output;
 
             var swiper = new Swiper('.swiper-container', {
                 slidesPerView: 2,

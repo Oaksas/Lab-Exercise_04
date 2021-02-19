@@ -107,6 +107,8 @@ function loadDataNew() {
 
 }
 filter.addEventListener('keyup', filterTasks);
+
+
     // Search 
     function filterTasks(e) {
          // let userdata = (e.target.value).toUpperCase();
@@ -114,7 +116,7 @@ filter.addEventListener('keyup', filterTasks);
         // console.log(userdata);
         for(i = 0; i < coll.length; i++){
             // coll[i].style.color = "black"
-            if (coll[i].textContent.indexOf((e.target.value).toUpperCase()) == -1){
+            if (coll[i].textContent.toUpperCase() === -999){
                 coll[i].parentElement.parentElement.style.display = "none";
             }else{
                 coll[i].parentElement.parentElement.style.display = "block";
@@ -132,13 +134,13 @@ desend.addEventListener('click', desending);
 // Sorting Order
 function order(e){
     let div = document.querySelectorAll("#bTitle");
-    listName = new Array();
+    uList = new Array();
     for (i = 0; i < div.length; i++) {
-        listName.push(div[i].textContent);
+        uList.push(div[i].textContent);
     }
-    let newlist = listName.sort();
-    console.log(newlist)
-    return newlist;
+    let sList = uList.sort();
+    console.log(sList)
+    return sList;
     
 }
 
