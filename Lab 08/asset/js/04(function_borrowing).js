@@ -1,4 +1,7 @@
+
 //DOM Load 
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
 
@@ -8,6 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+
+let line= {
+    length: 5,
+    display: function(){
+      es5.innerHTML = this.length
+}
+}
+line.display()
+
+//es6
+let lineNew= {
+    length:5,
+    display: ()=>{
+      es6.innerHTML = this.length
+}
+
+
+}
+lineNew.display()
 
 //Brad Person Object 
 const Brad = {
